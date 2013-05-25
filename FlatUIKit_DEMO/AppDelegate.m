@@ -7,16 +7,38 @@
 //
 
 #import "AppDelegate.h"
+#import "RootViewController.h"
+
+#import "UINavigationBar+FlatUI.h"
+#import "UITabBar+FlatUI.h"
+#import "UIProgressView+FlatUI.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  // Override point for customization after application launch.
+  [self configureAppearanceProxy];
+  self.window.backgroundColor = [UIColor whiteColor];
+  
+  RootViewController *rootViewControllerOne = [[RootViewController alloc] init];
+  [rootViewControllerOne setTitle:@"RootVC - One"];
+  UINavigationController *navigationControllerOne = [[UINavigationController alloc] initWithRootViewController:rootViewControllerOne];
+  [navigationControllerOne setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"One" image:nil tag:0]];
+  
+  RootViewController *rootViewControllerTwo = [[RootViewController alloc] init];
+  [rootViewControllerTwo setTitle:@"RootVC - One"];
+  UINavigationController *navigationControllerTwo = [[UINavigationController alloc] initWithRootViewController:rootViewControllerTwo];
+  [navigationControllerTwo setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Two" image:nil tag:0]];
+  
+  UITabBarController *tabbarController = [[UITabBarController alloc] init];
+  [tabbarController setViewControllers:@[navigationControllerOne, navigationControllerTwo]];
+                                          
+  [self.window setRootViewController:tabbarController];
+  [self.window makeKeyAndVisible];
+  
+  return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -27,7 +49,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-  // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+  // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
   // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -44,6 +66,19 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Appearance Proxy
+- (void)configureAppearanceProxy {
+  
+  UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
+  [navigationBarAppearance configureFlatNavigationBarWithColor:[UIColor blackColor]];
+  
+//  UITabBar *tabBarAppearance = [UITabBar appearance];
+//  [tabBarAppearance configureFlatTabBarWithColor:[UIColor blackColor] selectedColor:[UIColor darkGrayColor]];
+  
+//  UIProgressView *progressViewAppearance = [UIProgressView appearance];
+//  [progressViewAppearance configureFlatProgressViewWithTrackColor:[UIColor darkGrayColor] progressColor:[UIColor lightGrayColor]];
 }
 
 @end

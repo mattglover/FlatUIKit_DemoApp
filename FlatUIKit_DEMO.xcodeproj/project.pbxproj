@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77F2D9695CDE4761A8B672A8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A50CD620C75D4DA79496472E /* libPods.a */; };
+		E29ED7FC1750184D00AD9079 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29ED7FB1750184D00AD9079 /* RootViewController.m */; };
 		E2A365EC175015DE0056FDFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A365EB175015DE0056FDFC /* UIKit.framework */; };
 		E2A365EE175015DE0056FDFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A365ED175015DE0056FDFC /* Foundation.framework */; };
 		E2A365F0175015DE0056FDFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A365EF175015DE0056FDFC /* CoreGraphics.framework */; };
@@ -19,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D4988465E334D76BD64B399 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		A50CD620C75D4DA79496472E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E29ED7FA1750184D00AD9079 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		E29ED7FB1750184D00AD9079 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		E2A365E8175015DE0056FDFC /* FlatUIKit_DEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlatUIKit_DEMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A365EB175015DE0056FDFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E2A365ED175015DE0056FDFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -42,18 +48,29 @@
 				E2A365EC175015DE0056FDFC /* UIKit.framework in Frameworks */,
 				E2A365EE175015DE0056FDFC /* Foundation.framework in Frameworks */,
 				E2A365F0175015DE0056FDFC /* CoreGraphics.framework in Frameworks */,
+				77F2D9695CDE4761A8B672A8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E29ED7F91750183C00AD9079 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E29ED7FA1750184D00AD9079 /* RootViewController.h */,
+				E29ED7FB1750184D00AD9079 /* RootViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		E2A365DF175015DE0056FDFC = {
 			isa = PBXGroup;
 			children = (
 				E2A365F1175015DE0056FDFC /* FlatUIKit_DEMO */,
 				E2A365EA175015DE0056FDFC /* Frameworks */,
 				E2A365E9175015DE0056FDFC /* Products */,
+				4D4988465E334D76BD64B399 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +88,7 @@
 				E2A365EB175015DE0056FDFC /* UIKit.framework */,
 				E2A365ED175015DE0056FDFC /* Foundation.framework */,
 				E2A365EF175015DE0056FDFC /* CoreGraphics.framework */,
+				A50CD620C75D4DA79496472E /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -78,8 +96,7 @@
 		E2A365F1175015DE0056FDFC /* FlatUIKit_DEMO */ = {
 			isa = PBXGroup;
 			children = (
-				E2A365FA175015DE0056FDFC /* AppDelegate.h */,
-				E2A365FB175015DE0056FDFC /* AppDelegate.m */,
+				E29ED7F91750183C00AD9079 /* Controller */,
 				E2A365F2175015DE0056FDFC /* Supporting Files */,
 			);
 			path = FlatUIKit_DEMO;
@@ -88,6 +105,8 @@
 		E2A365F2175015DE0056FDFC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E2A365FA175015DE0056FDFC /* AppDelegate.h */,
+				E2A365FB175015DE0056FDFC /* AppDelegate.m */,
 				E2A365F3175015DE0056FDFC /* FlatUIKit_DEMO-Info.plist */,
 				E2A365F4175015DE0056FDFC /* InfoPlist.strings */,
 				E2A365F7175015DE0056FDFC /* main.m */,
@@ -106,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2A36605175015DE0056FDFC /* Build configuration list for PBXNativeTarget "FlatUIKit_DEMO" */;
 			buildPhases = (
+				5CB65BA3AF0748A192BBACDF /* Check Pods Manifest.lock */,
 				E2A365E4175015DE0056FDFC /* Sources */,
 				E2A365E5175015DE0056FDFC /* Frameworks */,
 				E2A365E6175015DE0056FDFC /* Resources */,
+				16435AB374EE41538232766C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,6 +180,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16435AB374EE41538232766C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		5CB65BA3AF0748A192BBACDF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E2A365E4175015DE0056FDFC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -166,6 +218,7 @@
 			files = (
 				E2A365F8175015DE0056FDFC /* main.m in Sources */,
 				E2A365FC175015DE0056FDFC /* AppDelegate.m in Sources */,
+				E29ED7FC1750184D00AD9079 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,10 +294,12 @@
 		};
 		E2A36606175015DE0056FDFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D4988465E334D76BD64B399 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlatUIKit_DEMO/FlatUIKit_DEMO-Prefix.pch";
 				INFOPLIST_FILE = "FlatUIKit_DEMO/FlatUIKit_DEMO-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -252,10 +307,12 @@
 		};
 		E2A36607175015DE0056FDFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D4988465E334D76BD64B399 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlatUIKit_DEMO/FlatUIKit_DEMO-Prefix.pch";
 				INFOPLIST_FILE = "FlatUIKit_DEMO/FlatUIKit_DEMO-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -280,6 +337,7 @@
 				E2A36607175015DE0056FDFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

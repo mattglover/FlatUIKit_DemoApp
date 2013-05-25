@@ -1,0 +1,18 @@
+PODS:
+  - AFNetworking (1.2.1)
+  - FlatUIKit (1.1)
+
+DEPENDENCIES:
+  - AFNetworking (~> 1.2.1)
+  - FlatUIKit (from `https://github.com/Grouper/FlatUIKit.git`, commit `1e017e0641213f832423475e6fe1464c8de41400`)
+
+EXTERNAL SOURCES:
+  FlatUIKit:
+    :commit: 1e017e0641213f832423475e6fe1464c8de41400
+    :git: https://github.com/Grouper/FlatUIKit.git
+
+SPEC CHECKSUMS:
+  AFNetworking: a44069e3c9c89867544f6639482f155c7e5f9b41
+  FlatUIKit: 3b15b582ffcfa4e392bedc4d3c5461f9b11c1cc2
+
+COCOAPODS: 0.20.1
