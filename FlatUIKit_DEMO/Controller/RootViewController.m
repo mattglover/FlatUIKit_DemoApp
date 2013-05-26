@@ -9,6 +9,8 @@
 #import "RootViewController.h"
 
 #import "UIFont+FlatUI.h"
+#import "UIProgressView+FlatUI.h"
+#import "UISlider+FlatUI.h"
 
 #import "FUIButton.h"
 #import "FUIAlertView.h"
@@ -91,6 +93,7 @@ typedef enum {
   [progressView setFrame:CGRectMake(0, 0, 280, CGRectGetHeight(progressView.bounds))];
   [progressView setCenter:CGPointMake(self.flatButton.center.x, CGRectGetMaxY(self.switchControl.frame) + CGRectGetMidY(progressView.bounds) + DEFAULT_Y_SPACE)];
   [progressView setProgress:0.5f];
+  [progressView configureFlatProgressViewWithTrackColor:[UIColor darkGrayColor] progressColor:[UIColor lightGrayColor]];
   
   self.progressView = progressView;
   [self.view addSubview:self.progressView];
@@ -104,6 +107,8 @@ typedef enum {
   [slider setMaximumValue:1.0];
   [slider setValue:self.progressView.progress];
   [slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+ // [slider configureFlatSliderWithTrackColor:[UIColor darkGrayColor] progressColor:[UIColor lightGrayColor] thumbColor:[UIColor blackColor]];
+    [slider configureFlatSliderWithTrackColor:[UIColor darkGrayColor] progressColor:[UIColor lightGrayColor] thumbColorNormal:[UIColor blackColor] thumbColorHighlighted:[UIColor greenColor]];
   
   self.sliderView = slider;
   [self.view addSubview:self.sliderView];

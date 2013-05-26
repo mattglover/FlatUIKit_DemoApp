@@ -11,7 +11,6 @@
 
 #import "UINavigationBar+FlatUI.h"
 #import "UITabBar+FlatUI.h"
-#import "UIProgressView+FlatUI.h"
 
 @implementation AppDelegate
 
@@ -33,6 +32,7 @@
   [navigationControllerTwo setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Two" image:nil tag:0]];
   
   UITabBarController *tabbarController = [[UITabBarController alloc] init];
+  [tabbarController.tabBar configureFlatTabBarWithColor:[UIColor blackColor] selectedColor:[UIColor darkGrayColor]];
   [tabbarController setViewControllers:@[navigationControllerOne, navigationControllerTwo]];
                                           
   [self.window setRootViewController:tabbarController];
@@ -73,12 +73,6 @@
   
   UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
   [navigationBarAppearance configureFlatNavigationBarWithColor:[UIColor blackColor]];
-  
-//  UITabBar *tabBarAppearance = [UITabBar appearance];
-//  [tabBarAppearance configureFlatTabBarWithColor:[UIColor blackColor] selectedColor:[UIColor darkGrayColor]];
-  
-//  UIProgressView *progressViewAppearance = [UIProgressView appearance];
-//  [progressViewAppearance configureFlatProgressViewWithTrackColor:[UIColor darkGrayColor] progressColor:[UIColor lightGrayColor]];
 }
 
 @end

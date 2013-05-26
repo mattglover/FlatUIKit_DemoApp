@@ -4,12 +4,12 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 1.2.1)
-  - FlatUIKit (from `https://github.com/Grouper/FlatUIKit.git`, commit `1e017e0641213f832423475e6fe1464c8de41400`)
+  - FlatUIKit (from `https://github.com/mattglover/FlatUIKit.git`, commit `aad9563a5a5e64a8ef7ce9fa3e83bb5fea6f3cf1`)
 
 EXTERNAL SOURCES:
   FlatUIKit:
-    :commit: 1e017e0641213f832423475e6fe1464c8de41400
-    :git: https://github.com/Grouper/FlatUIKit.git
+    :commit: aad9563a5a5e64a8ef7ce9fa3e83bb5fea6f3cf1
+    :git: https://github.com/mattglover/FlatUIKit.git
 
 SPEC CHECKSUMS:
   AFNetworking: a44069e3c9c89867544f6639482f155c7e5f9b41
