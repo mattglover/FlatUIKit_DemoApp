@@ -11,6 +11,7 @@
 #import "UIFont+FlatUI.h"
 #import "UIProgressView+FlatUI.h"
 #import "UISlider+FlatUI.h"
+#import "UIBarButtonItem+FlatUI.h"
 
 #import "FUIButton.h"
 #import "FUIAlertView.h"
@@ -37,6 +38,8 @@ typedef enum {
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  [self setupNavigationBarButton];
+  
   [self setupFUIButton];
   [self setupFUISegmentedControl];
   [self setupFUISwitchControl];
@@ -50,6 +53,12 @@ typedef enum {
 
 
 #pragma mark - Setup FlatUIKit elements
+- (void)setupNavigationBarButton {
+  UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Test" style:UIBarButtonItemStyleBordered target:self action:@selector(navTestButtonPressed:)];
+  [leftButton configureFlatButtonWithColor:[UIColor redColor] highlightedColor:[UIColor greenColor] cornerRadius:3.0f];
+  [self.navigationItem setLeftBarButtonItem:leftButton];
+}
+
 - (void)setupFUIButton {
   FUIButton *flatButton = [[FUIButton alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
   [flatButton setButtonColor:[UIColor redColor]];
@@ -107,18 +116,24 @@ typedef enum {
   [slider setMaximumValue:1.0];
   [slider setValue:self.progressView.progress];
   [slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
- // [slider configureFlatSliderWithTrackColor:[UIColor darkGrayColor] progressColor:[UIColor lightGrayColor] thumbColor:[UIColor blackColor]];
-    [slider configureFlatSliderWithTrackColor:[UIColor darkGrayColor] progressColor:[UIColor lightGrayColor] thumbColorNormal:[UIColor blackColor] thumbColorHighlighted:[UIColor greenColor]];
+  // [slider configureFlatSliderWithTrackColor:[UIColor darkGrayColor] progressColor:[UIColor lightGrayColor] thumbColor:[UIColor blackColor]];
+  [slider configureFlatSliderWithTrackColor:[UIColor darkGrayColor] progressColor:[UIColor lightGrayColor] thumbColorNormal:[UIColor blackColor] thumbColorHighlighted:[UIColor greenColor]];
   
   self.sliderView = slider;
   [self.view addSubview:self.sliderView];
 }
 
 
+#pragma mark - UIBarButton Listener
+- (void)navTestButtonPressed:(UIBarButtonItem *)sender {
+  NSLog(@"Test Button Pressed");
+}
+
+
 #pragma mark - FUIButton Listener
 - (void)buttonPressed:(FUIButton *)sender {
   
-   FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"FlatUI Alert" message:@"This is an example AlertView from the FlatUIKit library" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Tell Me More", nil];
+  FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"FlatUI Alert" message:@"This is an example AlertView from the FlatUIKit library" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Tell Me More", nil];
   [alertView.backgroundOverlay setBackgroundColor:[UIColor colorWithWhite:0.0f alpha:0.9]];
   [alertView show];
 }
@@ -138,7 +153,7 @@ typedef enum {
       NSLog(@"Ooo interesting .. the User wants to know more, the cheeky little monkey");
       break;
       
-     case FUIAlertViewButtonIndexCancel:
+    case FUIAlertViewButtonIndexCancel:
     default:
       NSLog(@"Doing Nothing .. User Probably closed FUIAlertView by choosing Cancel");
       break;
